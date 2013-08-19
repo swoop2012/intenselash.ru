@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'GothamProRegular';
+    src: url('gothaproreg.eot');
+    src: url('gothaproreg.eot') format('embedded-opentype'),
+         url('gothaproreg.woff') format('woff'),
+         url('gothaproreg.ttf') format('truetype'),
+         url('gothaproreg.svg#GothamProRegular') format('svg');
+}

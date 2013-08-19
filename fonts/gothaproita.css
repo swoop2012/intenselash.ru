@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'GothamProItalic';
+    src: url('gothaproita.eot');
+    src: url('gothaproita.eot') format('embedded-opentype'),
+         url('gothaproita.woff') format('woff'),
+         url('gothaproita.ttf') format('truetype'),
+         url('gothaproita.svg#GothamProItalic') format('svg');
+}
