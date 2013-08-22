@@ -15,7 +15,7 @@ class OrderController extends  Controller{
     public function actionIndex(){
         if(!Settings::getValue('ValidateKey'))
             throw new CHttpException('404','На данный момент функция оформления заказа недоступна');
-        $this->pageTitle='Джойсон - Заказ';
+        $this->pageTitle='Заказ';
         $this->setParams();
         $orderForm = Yii::app()->request->getPost('OrderForm');
         $type = !empty($orderForm)?$orderForm['typeDelivery']:1;
@@ -94,7 +94,7 @@ class OrderController extends  Controller{
     }
 
     public function actionSuccess(){
-        $this->pageTitle='Джойсон - Заказ';
+        $this->pageTitle='Заказ';
         $order = Order::getOrder();
         if(empty($order)||!isset($order['payment'])||!isset($order['delivery'])||!isset($order['totalSum']))
             $this->redirect('/');
