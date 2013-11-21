@@ -958,6 +958,7 @@ p.allotzivi {
     font-size: 13px;
     float:left;
     margin-right:20px;
+    margin-bottom:10px;
 }
 .radio.active {
     background-position: 0 -114px;
