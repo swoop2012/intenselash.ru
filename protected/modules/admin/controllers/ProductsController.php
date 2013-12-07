@@ -1,21 +1,19 @@
 <?php
-class ProductsController extends AdminController
+class ProductsController extends CrudController
 {
-      public function actionIndex(){
+    function init() {
+        parent::init("products");
+        $this->setModel('Product');
 
-	$model = Product::model()->findAll(array('order'=>'t.Position ASC'));
+    }
+    public function actionIndex(){
+
+        $model = Product::model()->findAll(array('order'=>'t.Position ASC'));
 	$success = $this->updateProducts($model);
 	$this->render('index',array(
 	     'success'=>isset($success)?$success:0,
 	     'model'=>$model,
 	     ));
-    }
-    public function loadModel($id)
-    {
-	    $model=Product::model()->findByPk($id);
-	    if($model===null)
-		    throw new CHttpException(404,'Запрашиваемая страница не найдена!');
-	    return $model;
     }
     public function loadSubProduct($id)
     {
