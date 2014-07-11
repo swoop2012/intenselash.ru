@@ -25,6 +25,15 @@ class OrderForm extends CFormModel{
         array('comment,typeDelivery','safe'),
 	);
     }
+
+    protected function beforeValidate(){
+        if(!Order::getParam('delivery')||!Order::getParam('payment'))
+            $this->addError('fullName','Выберите способ доставки и оплаты');
+        return parent::beforeValidate();
+    }
+
+
+
     public function attributeLabels(){
         return array(
             'address'=>'Адрес',
